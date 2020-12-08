@@ -1,14 +1,28 @@
 (function(){
 
-    let mensaje = "Hola";
+    let mensaje: string = "Hola";
+    let numero: number = 9;
+    let booleano: boolean = true; // false
+    let hoy: Date = new Date ();
 
-    if (true) {
-        let mensaje = "Mundo";
+    let cualquierCosa: string | number;
+    cualquierCosa = mensaje;
+    cualquierCosa = numero;
+    //cualquierCosa = booleano;
+    //cualquierCosa = hoy;
+
+    console.log("Variable cualquierCosa: "+cualquierCosa);
+
+    let spiderman = {
+        nombre: 'Peter',
+        edad: 30
     }
 
-    const saludo = "Como estas?"
+    spiderman = {
+        nombre: 'Peter Parker',
+        edad: 4
+    }
 
-    console.log(mensaje);
-    console.log(saludo);
+    console.log("Objeto spiderman: "+spiderman);
 
 })();
