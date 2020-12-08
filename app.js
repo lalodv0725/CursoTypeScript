@@ -1,11 +1,9 @@
-"use strict";
 (function () {
-    //Nombre tiene que ser de tipo String
-    function saludar(nombre) {
-        console.table('Hola ' + nombre + ', Como estas?'); // Hola Logan
+    var mensaje = "Hola";
+    if (true) {
+        var mensaje_1 = "Mundo";
     }
-    var wolverine = {
-        nombre: 'Logan'
-    };
-    saludar(wolverine.nombre);
+    var saludo = "Como estas?";
+    console.log(mensaje);
+    console.log(saludo);
 })();
