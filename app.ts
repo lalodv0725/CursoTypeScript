@@ -1,35 +1,49 @@
-(function(){
+(() => {
 
-    const funcionNormal = function( cadena:string ){
-        return cadena.toUpperCase();
+    const avenger = {
+        nombre:'Steve',
+        clave:'Capitan America',
+        poder: 'Fuerza'
     }
 
-    const funcionFlecha = (cadena:string) => cadena.toUpperCase();
+    const { clave, nombre } = avenger;
 
-    const funcionSumarN = function(a:number, b:number){
-        return a+b;
+    // console.log(avenger.nombre);
+    // console.log(avenger.clave);
+    // console.log(avenger.poder);
+    console.log(clave)
+    console.log(nombre);
+
+    //const extraerDatos = (avenger:any) => {
+    const extraerDatos = ({nombre,poder}:any) => {
+        console.log("======== USANDO FUNCION extraerDatos ========")
+        console.log(nombre)
+        console.log(poder);
+
+        console.log("==============================================");
     }
 
-    const funcionSumarF = (a:number, b:number) => a+b; 
+    extraerDatos(avenger);
+
+    const avengers: string [] = ["Thor", "IronMan", "SpiderMan"];
+
+    const [dios, hombre, arana] = avengers;
+
+    // console.log(avengers[0]);
+    // console.log(avengers[1]);
+    // console.log(avengers[2]);
+    console.log(dios);
+    console.log(hombre);
+    console.log(arana);
 
 
-    console.log(funcionNormal("normal"));
-    console.log(funcionFlecha("flecha"));
-
-    console.log(funcionSumarN(4,5));
-    console.log(funcionSumarF(4,5));
-
-
-    const hulk = {
-        nombre: 'Hulk',
-        smash(){
-            setTimeout(() => {
-                console.log(`${this.nombre} aplasta!!`);
-            }, 2000);
-            
-        }
+    //const extraerDatosArreglo = (avengers:string[]) => {
+    const extraerDatosArreglo = ([,,spiderman]:string []) => {
+        console.log("===== USANDO FUNCION extraerDatosArreglo =====");
+        console.log(spiderman);
+        console.log("==============================================");
     }
 
-    hulk.smash();
+    extraerDatosArreglo(avengers);
 
 })();

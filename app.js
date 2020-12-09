@@ -1,25 +1,39 @@
 "use strict";
 (function () {
-    var funcionNormal = function (cadena) {
-        return cadena.toUpperCase();
+    var avenger = {
+        nombre: 'Steve',
+        clave: 'Capitan America',
+        poder: 'Fuerza'
     };
-    var funcionFlecha = function (cadena) { return cadena.toUpperCase(); };
-    var funcionSumarN = function (a, b) {
-        return a + b;
+    var clave = avenger.clave, nombre = avenger.nombre;
+    // console.log(avenger.nombre);
+    // console.log(avenger.clave);
+    // console.log(avenger.poder);
+    console.log(clave);
+    console.log(nombre);
+    //const extraerDatos = (avenger:any) => {
+    var extraerDatos = function (_a) {
+        var nombre = _a.nombre, poder = _a.poder;
+        console.log("======== USANDO FUNCION extraerDatos ========");
+        console.log(nombre);
+        console.log(poder);
+        console.log("==============================================");
     };
-    var funcionSumarF = function (a, b) { return a + b; };
-    console.log(funcionNormal("normal"));
-    console.log(funcionFlecha("flecha"));
-    console.log(funcionSumarN(4, 5));
-    console.log(funcionSumarF(4, 5));
-    var hulk = {
-        nombre: 'Hulk',
-        smash: function () {
-            var _this = this;
-            setTimeout(function () {
-                console.log(_this.nombre + " aplasta!!");
-            }, 2000);
-        }
+    extraerDatos(avenger);
+    var avengers = ["Thor", "IronMan", "SpiderMan"];
+    var dios = avengers[0], hombre = avengers[1], arana = avengers[2];
+    // console.log(avengers[0]);
+    // console.log(avengers[1]);
+    // console.log(avengers[2]);
+    console.log(dios);
+    console.log(hombre);
+    console.log(arana);
+    //const extraerDatosArreglo = (avengers:string[]) => {
+    var extraerDatosArreglo = function (_a) {
+        var spiderman = _a[2];
+        console.log("===== USANDO FUNCION extraerDatosArreglo =====");
+        console.log(spiderman);
+        console.log("==============================================");
     };
-    hulk.smash();
+    extraerDatosArreglo(avengers);
 })();
