@@ -1,27 +1,18 @@
 (() => {
 
-    //Introduccion a interfaces
+    class Avenger {
 
-    interface Xmen {
-        nombre:string;
-        edad: number;
-        poder?:string;
+        nombre:string = "Sin Nombre";
+        poder:string;
+        edad:number;
+
+        puedePelear:boolean;
+        peleasGanadas:number;
+
     }
 
-    const enviarAMision = (xmen: Xmen) =>{
-        console.log(`Xmen ${xmen.nombre} enviado a mision`);
-    }
+    const ironMan:Avenger = new Avenger();
 
-    const regresarAlCuartel = (xmen:Xmen) =>{
-        console.log(`Xmen ${xmen.nombre} regreso al cuartel`);
-    }
-
-    const wolverine: Xmen = {
-        nombre: 'Logan',
-        edad: 60
-    }
-
-    enviarAMision(wolverine);
-    regresarAlCuartel(wolverine);
-
+    console.log(ironMan);
+    
 })();
