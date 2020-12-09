@@ -8,4 +8,4 @@ console.log( mensaje );
 
 const wolverine = new Xmen("Logan","Inmortal");
 
-wolverine.imprimir();
+//wolverine.imprimir();
