@@ -1,21 +1,15 @@
+"use strict";
 (function () {
-    var mensaje = "Hola";
-    var numero = 9;
-    var booleano = true; // false
-    var hoy = new Date();
-    var cualquierCosa;
-    cualquierCosa = mensaje;
-    cualquierCosa = numero;
-    //cualquierCosa = booleano;
-    //cualquierCosa = hoy;
-    console.log("Variable cualquierCosa: " + cualquierCosa);
-    var spiderman = {
-        nombre: 'Peter',
-        edad: 30
-    };
-    spiderman = {
-        nombre: 'Peter Parker',
-        edad: 4
-    };
-    console.log("Objeto spiderman: " + spiderman);
+    function getEdad() {
+        return 10 + 10;
+    }
+    var nombre = "Lalo";
+    var apellido = "Auditore";
+    var edad = 26;
+    //const salida = nombre+apellido+edad;
+    //const salida = nombre + " " + apellido + " (Edad: " + edad + ")";
+    var salida = "\n   " + nombre + " " + apellido + " \n(Edad: " + (edad + 10) + ") Usando String Template";
+    var salidaConFuncion = nombre + " " + apellido + " (Edad: " + getEdad() + ") Usando String Template y llamado de funcion";
+    console.log(salida); //Salida Esperada: Lalo Auditore (Edad: 26)
+    console.log(salidaConFuncion);
 })();
