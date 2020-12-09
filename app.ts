@@ -1,49 +1,35 @@
 (() => {
 
-    const avenger = {
-        nombre:'Steve',
-        clave:'Capitan America',
-        poder: 'Fuerza'
+    console.log("------- Inicio PROGRAMA -------");
+    //Promesas
+    const retirarDinero = (montoRetirar:number):Promise<number> =>{
+
+        console.log("Ejecutando retiro de dinero")
+
+        let dineroDisponible: number = 1500;
+
+        return new Promise ((resolve,reject)=>{
+
+            setTimeout(() => {
+                if (montoRetirar > dineroDisponible) {
+                    reject("Dinero insuficiente");
+                } else {
+                    dineroDisponible = dineroDisponible - montoRetirar;
+                    resolve(dineroDisponible);
+                }
+            }, 3000);
+
+        });
     }
 
-    const { clave, nombre } = avenger;
+    retirarDinero(7000)
+        .then((dinero:number)=> {
+            console.log(`Dinero disponible despues de la operacion: ${dinero}`);
+        })
+        .catch((mensajeError) => {
+            console.warn(mensajeError);
+        })
 
-    // console.log(avenger.nombre);
-    // console.log(avenger.clave);
-    // console.log(avenger.poder);
-    console.log(clave)
-    console.log(nombre);
-
-    //const extraerDatos = (avenger:any) => {
-    const extraerDatos = ({nombre,poder}:any) => {
-        console.log("======== USANDO FUNCION extraerDatos ========")
-        console.log(nombre)
-        console.log(poder);
-
-        console.log("==============================================");
-    }
-
-    extraerDatos(avenger);
-
-    const avengers: string [] = ["Thor", "IronMan", "SpiderMan"];
-
-    const [dios, hombre, arana] = avengers;
-
-    // console.log(avengers[0]);
-    // console.log(avengers[1]);
-    // console.log(avengers[2]);
-    console.log(dios);
-    console.log(hombre);
-    console.log(arana);
-
-
-    //const extraerDatosArreglo = (avengers:string[]) => {
-    const extraerDatosArreglo = ([,,spiderman]:string []) => {
-        console.log("===== USANDO FUNCION extraerDatosArreglo =====");
-        console.log(spiderman);
-        console.log("==============================================");
-    }
-
-    extraerDatosArreglo(avengers);
+    console.log("------- Fin PROGRAMA -------");
 
 })();
