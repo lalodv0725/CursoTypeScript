@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-//Routes
+//Rutas
 import {APP_ROUTING} from './app.routes';
 
 //Componentes
@@ -10,6 +10,7 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { HeroesComponent } from './components/heroes/heroes.component';
+import { compileNgModuleFromRender2 } from '@angular/compiler/src/render3/r3_module_compiler';
 
 @NgModule({
   declarations: [
