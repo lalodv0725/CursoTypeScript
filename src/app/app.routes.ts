@@ -10,7 +10,7 @@ const APP_ROUTES: Routes = [
     {path:'about',component:AboutComponent},
     {path:'heroes',component:HeroesComponent},
     {path:'heroe/:id',component:HeroeComponent},
-    {path:'heroes/:terminoABuscar',component:SearchComponent},
+    {path:'buscar/:terminoABuscar',component:SearchComponent},
     {path: '**', pathMatch:'full', redirectTo:'home'}
 ];
 

@@ -11,23 +11,27 @@ import { Heroe, HeroesService } from 'src/app/servicios/heroes.service';
 })
 export class SearchComponent implements OnInit {
 
-    heroes: Heroe[];
+    heroes: Heroe[] = [];
+    termino:string;
 
     constructor(private rutaActiva: ActivatedRoute,
         private _heroeService: HeroesService,
         private ruteo: Router) {
 
-        console.log(this.rutaActiva);
-        this.rutaActiva.params.subscribe((params) => {
-            console.log(params);
-            console.log(params['terminoABuscar']);
-            console.log(this._heroeService.buscarHeroes(params['terminoABuscar']));
-            this.heroes = this._heroeService.buscarHeroes(params['terminoABuscar']);
-        });
 
     }
 
     ngOnInit(): void {
+
+        console.log(this.rutaActiva);
+        this.rutaActiva.params.subscribe((params) => {
+            console.log(params);
+            console.log(params['terminoABuscar']);
+            this.termino = params['terminoABuscar'];
+            console.log(this._heroeService.buscarHeroes(params['terminoABuscar']));
+            this.heroes = this._heroeService.buscarHeroes(params['terminoABuscar']);
+            console.log("Heroes",this.heroes);
+        });
     }
 
     verHeroe(indice:number){
