@@ -22,8 +22,8 @@ export class HeroesComponent implements OnInit {
     console.log(this.heroes);
   }
 
-  verHeroe(index:number) {
-    console.log("Indice",index);
-    this.ruteo.navigate(["/heroe",index]);
-  }
+  // verHeroe(index:number) {
+  //   console.log("Indice",index);
+  //   this.ruteo.navigate(["/heroe",index]);
+  // }
 }

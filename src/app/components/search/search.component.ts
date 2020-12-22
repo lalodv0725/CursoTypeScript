@@ -38,7 +38,7 @@ export class SearchComponent implements OnInit {
     }
 
     verHeroe(){
-        // console.log(this.index);
-        // this.ruteo.navigate(['/heroe',this.index]);
+        console.log("this.hero.idx: ",this.hero.idx);
+        this.ruteo.navigate(['/heroe',this.index]);
       }
 }
