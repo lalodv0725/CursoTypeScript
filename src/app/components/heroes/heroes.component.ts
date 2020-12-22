@@ -10,7 +10,7 @@ export class HeroesComponent implements OnInit {
 
   heroes: Heroe[] = []
 
-  constructor(private _heroesService:HeroesService, 
+  constructor(private _heroesService:HeroesService,
               private ruteo:Router) { // con solo poner el servicio en parametros ya ejecuta su constructor
     console.log("Constructor HeroesComponent");
    }
@@ -22,9 +22,8 @@ export class HeroesComponent implements OnInit {
     console.log(this.heroes);
   }
 
-  verHeroe(indice:number){
-    console.log(indice);
-    this.ruteo.navigate(['/heroe',indice]);
+  verHeroe(index:number) {
+    console.log("Indice",index);
+    this.ruteo.navigate(["/heroe",index]);
   }
-
 }

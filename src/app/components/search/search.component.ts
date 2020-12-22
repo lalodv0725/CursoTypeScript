@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Heroe, HeroesService } from 'src/app/servicios/heroes.service';
 
@@ -10,6 +10,9 @@ import { Heroe, HeroesService } from 'src/app/servicios/heroes.service';
     ]
 })
 export class SearchComponent implements OnInit {
+
+    @Input() hero: Heroe;
+    @Input() index: number;
 
     heroes: Heroe[] = [];
     termino:string;
@@ -34,8 +37,8 @@ export class SearchComponent implements OnInit {
         });
     }
 
-    verHeroe(indice:number){
-        console.log(indice);
-        this.ruteo.navigate(['/heroe',indice]);
+    verHeroe(){
+        // console.log(this.index);
+        // this.ruteo.navigate(['/heroe',this.index]);
       }
 }
