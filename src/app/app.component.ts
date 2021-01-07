@@ -37,6 +37,11 @@ export class AppComponent {
     );
   });
 
+
+  
+  
+  
+
   objMutante = {
     nombre: "Logan",
     edad: 40,
