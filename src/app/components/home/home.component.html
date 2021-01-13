@@ -4,4 +4,25 @@
     </li>
 </ul> -->
 
-<h1>Nuevos Lanzamientos</h1>
+<h1 class="mb-5">Nuevos Lanzamientos</h1>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    <div *ngFor="let lanzamiento of nuevosLanzamientos" class="col">
+        <div class="card h-100">
+            <img [src]="lanzamiento.images[0].url" class="card-img-top" alt="album-image">
+            <div class="card-body">
+                <h5 class="card-title">
+                    {{lanzamiento.name}}
+                </h5>
+                <p class="card-text">
+                    <span *ngFor="let artistas of lanzamiento.artists" class="badge rounded-pill bg-primary">
+                        {{artistas.name}}
+                    </span>
+                </p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">Last updated 3 mins ago</small>
+            </div>
+        </div>
+    </div>
+</div>

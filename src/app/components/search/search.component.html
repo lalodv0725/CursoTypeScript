@@ -1,1 +1,34 @@
-<p>search works!</p>
+<div class="row">
+    <div class="mb-5 col">
+        <input #buscar type="text" placeholder="Buscar artista" (keyup)="buscarArtista(buscar.value)"
+            class="form-control" name="" id="">
+    </div>
+</div>
+
+<div *ngIf="artistasEncontrados.length > 0" class="row row-cols-1 row-cols-md-3 g-4">
+    <div *ngFor="let artista of artistasEncontrados" class="col">
+        <div class="card h-100">
+            <img [src]="artista.images[0].url" class="card-img-top" alt="album-image">
+            <div class="card-body">
+                <h5 class="card-title">
+                    {{artista.name}}
+                    <span class="badge bg-warning text-dark">
+                        {{artista.type}}
+                    </span>
+                </h5>
+                <p class="card-text">
+                    GENEROS:
+                    <span *ngFor="let generos of artista.genres" class="badge bg-danger">
+                        {{generos}}
+                    </span>
+                </p>
+            </div>
+            <div class="card-footer text-muted text-center" *ngIf="artista.followers.total > 0 || artista.followers.total !== null">
+                FOLLOWERS:
+                <span class="badge bg-info text-dark">
+                    {{artista.followers.total}}
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

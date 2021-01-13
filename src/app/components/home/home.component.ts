@@ -20,8 +20,15 @@ export class HomeComponent {
   //     console.log("Constructor del Home - paises: ",this.paises);  
   //   } );
   // }
+
+  nuevosLanzamientos:any[] = [];
   constructor(private spotify: SpotifyService) {
-    this.spotify.getNuevosLanzamientos();
+    this.spotify.getNuevosLanzamientos()
+      .subscribe((data:any)=> {
+        console.log("Nuevos lanzamientos - data: ",data);
+        console.log("Nuevos lanzamientos - data.albums.items: ",data.albums.items);
+        this.nuevosLanzamientos = data.albums.items;
+      });
   }
 
 }
