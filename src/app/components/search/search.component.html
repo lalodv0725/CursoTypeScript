@@ -1,11 +1,13 @@
-<div class="row">
-    <div class="mb-5 col">
+<div class="mb-5 row">
+    <div class="col">
         <input #buscar type="text" placeholder="Buscar artista" (keyup)="buscarArtista(buscar.value)"
             class="form-control" name="" id="">
     </div>
 </div>
 
-<div *ngIf="artistasEncontrados.length > 0" class="row row-cols-1 row-cols-md-3 g-4">
+<app-tarjetas [items]="artistasEncontrados"></app-tarjetas>
+
+<!-- <div *ngIf="artistasEncontrados.length > 0" class="row row-cols-1 row-cols-md-3 g-4">
     <div *ngFor="let artista of artistasEncontrados" class="col">
         <div class="card h-100">
             <img [src]="artista.images | noImage" class="card-img-top" alt="album-image">
@@ -31,4 +33,4 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
