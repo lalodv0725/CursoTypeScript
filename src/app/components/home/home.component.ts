@@ -24,10 +24,14 @@ export class HomeComponent {
   nuevosLanzamientos:any[] = [];
   constructor(private spotify: SpotifyService) {
     this.spotify.getNuevosLanzamientos()
-      .subscribe((data:any)=> {
-        console.log("Nuevos lanzamientos - data: ",data);
-        console.log("Nuevos lanzamientos - data.albums.items: ",data.albums.items);
-        this.nuevosLanzamientos = data.albums.items;
+      .subscribe((albums:any)=> {
+        // console.log("Nuevos lanzamientos - data: ",data);
+        // console.log("Nuevos lanzamientos - data.albums.items: ",data.albums.items);
+        // this.nuevosLanzamientos = data.albums.items;
+
+        console.log("Nuevos lanzamientos: ",albums);
+        this.nuevosLanzamientos = albums;
+
       });
   }
 

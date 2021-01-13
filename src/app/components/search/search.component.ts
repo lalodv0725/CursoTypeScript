@@ -17,9 +17,12 @@ export class SearchComponent{
     console.log(artistaBuscado);
     this.spotifyServicio.getArtistas(artistaBuscado)
     .subscribe((dataArtistas:any)=>{
-      console.log("Artistas encontrados - dataArtistas:",dataArtistas);
-      console.log("Artistas encontrados - dataArtistas.artists.items:",dataArtistas.artists.items);
-      this.artistasEncontrados = dataArtistas.artists.items;
+      // console.log("Artistas encontrados - dataArtistas:",dataArtistas);
+      // console.log("Artistas encontrados - dataArtistas.artists.items:",dataArtistas.artists.items);
+      // this.artistasEncontrados = dataArtistas.artists.items;
+
+      console.log("Artistas encontrados - artistas:",dataArtistas);
+      this.artistasEncontrados = dataArtistas;
     });
   }
 }
