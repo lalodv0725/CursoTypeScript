@@ -9,13 +9,17 @@ import { SpotifyService } from "../../services/spotify.service";
 })
 export class SearchComponent{
 
-  constructor(private spotifyServicio:SpotifyService) { }
+  constructor(private spotifyServicio:SpotifyService) {
+   }
 
   artistasEncontrados:any[] = [];
+
+  loading: boolean;
   
   buscarArtista(artistaBuscado:string){
+    this.loading = true;
     console.log(artistaBuscado);
-    this.spotifyServicio.getArtistas(artistaBuscado)
+    this.spotifyServicio.searchArtistas(artistaBuscado)
     .subscribe((dataArtistas:any)=>{
       // console.log("Artistas encontrados - dataArtistas:",dataArtistas);
       // console.log("Artistas encontrados - dataArtistas.artists.items:",dataArtistas.artists.items);
@@ -23,6 +27,7 @@ export class SearchComponent{
 
       console.log("Artistas encontrados - artistas:",dataArtistas);
       this.artistasEncontrados = dataArtistas;
+      this.loading = false;
     });
   }
 }

@@ -5,7 +5,9 @@
     </div>
 </div>
 
-<app-tarjetas [items]="artistasEncontrados"></app-tarjetas>
+<app-loading *ngIf="this.loading"></app-loading>
+
+<app-tarjetas *ngIf="!this.loading" [items]="artistasEncontrados"></app-tarjetas>
 
 <!-- <div *ngIf="artistasEncontrados.length > 0" class="row row-cols-1 row-cols-md-3 g-4">
     <div *ngFor="let artista of artistasEncontrados" class="col">

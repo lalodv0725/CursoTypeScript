@@ -3,8 +3,10 @@
         {{pais.name}} - {{pais.population | number}}
     </li>
 </ul> -->
-<div class="mb-5 row">
+<div class="row mb-5 ">
     <h1>Nuevos Lanzamientos</h1>
 </div>
+
+<app-loading *ngIf="this.loading"></app-loading>
 
 <app-tarjetas [items]="nuevosLanzamientos"></app-tarjetas>

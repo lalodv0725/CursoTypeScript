@@ -9,7 +9,7 @@ export class SpotifyService {
     console.log("Spotify Service Listo!!");
   }
 
-  tokenSpotify: string = "BQCyiXBEdmQafo-vrhvRrWEhKnBAv2ft-NP35RFOHR3mBnu8UI2liKQqz8s7uLrJ5pjN2PUlxQ614kp5pIA";
+  tokenSpotify: string = "BQDWwBsdi5K6kfn4oNtn3TASy3O9h6G20E7C1qLL2SriSQUxRR0xFl2xBez9ILPrAODXWgK-G2bnb2mnWFU";
 
   getQuery(query: string) {
     const url = `https://api.spotify.com/v1/${query}`;
@@ -31,7 +31,6 @@ export class SpotifyService {
         return data['albums'].items;
       }));
 
-
     //   const headers = new HttpHeaders({
     //     'Authorization': `Bearer ${this.tokenSpotify}`
     //   });
@@ -46,20 +45,39 @@ export class SpotifyService {
     // // });
   }
 
-  getArtistas(artista: string) {
+  searchArtistas(artista: string) {
     return this.getQuery(`search?q=${artista}&type=artist`)
       .pipe(map((data) => {
         return data['artists'].items;
       }));
+    //   const headers = new HttpHeaders({
+    //     'Authorization': `Bearer ${this.tokenSpotify}`
+    //   });
+    //   return this.http.get(`https://api.spotify.com/v1/search?q=${artista}&type=artist`, { headers })
+    //     .pipe(map((data) => {
+    //       return data['artists'].items;
+    //     }));
+    // }
   }
 
+  getArtista(idArtista: string) {
+    return this.getQuery(`artists/${idArtista}`);
+      // .subscribe((data) => {
+      //   console.log("Artista:",data);
+      //   return data;
+      // });
+    
+  }
 
-  //   const headers = new HttpHeaders({
-  //     'Authorization': `Bearer ${this.tokenSpotify}`
-  //   });
-  //   return this.http.get(`https://api.spotify.com/v1/search?q=${artista}&type=artist`, { headers })
-  //     .pipe(map((data) => {
-  //       return data['artists'].items;
-  //     }));
-  // }
+  getTopTracksArtista(idArtista: string) {
+    return this.getQuery(`artists/${idArtista}/top-tracks?market=MX`)
+    .pipe(map((data) => {
+      return data['tracks'];
+    }));
+      // .subscribe((data) => {
+      //   console.log("Artista:",data);
+      //   return data;
+      // });
+    
+  }
 }

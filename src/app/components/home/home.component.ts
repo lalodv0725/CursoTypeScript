@@ -21,16 +21,23 @@ export class HomeComponent {
   //   } );
   // }
 
-  nuevosLanzamientos:any[] = [];
+  nuevosLanzamientos: any[] = [];
+
+  loading: boolean;
+
   constructor(private spotify: SpotifyService) {
+
+    this.loading = true;
+
     this.spotify.getNuevosLanzamientos()
-      .subscribe((albums:any)=> {
+      .subscribe((albums: any) => {
         // console.log("Nuevos lanzamientos - data: ",data);
         // console.log("Nuevos lanzamientos - data.albums.items: ",data.albums.items);
         // this.nuevosLanzamientos = data.albums.items;
 
-        console.log("Nuevos lanzamientos: ",albums);
+        console.log("Nuevos lanzamientos: ", albums);
         this.nuevosLanzamientos = albums;
+        this.loading = false;
 
       });
   }

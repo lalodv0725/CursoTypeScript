@@ -1,1 +1,52 @@
-<p>artista works!</p>
+<!-- <p>idArtista: {{idArtista}}</p> -->
+
+<app-loading *ngIf="this.loadingArtist"></app-loading>
+
+<div *ngIf="!this.loadingArtist" class="row animated fadeIn mb-5">
+    <div class="col-2">
+        <img [src]="artista.images | noImage" class="img-thumbnail img-circle" alt="album-image">
+    </div>
+    <div class="col">
+        <h3>
+            {{artista.name}}
+        </h3>
+        <p>
+            <a [href]="artista.external_urls.spotify" target="_blank">
+                Ir a la pagina de artista
+            </a>
+        </p>
+    </div>
+    <div class="col-4 text-right">
+        <button class="btn btn-danger" routerLink="/search">Regresar</button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <table class="table table-dark table-hover">
+            <thead>
+                <tr>
+                    <th>FOTO</th>
+                    <th>CANCION</th>
+                    <th>ALBUM</th>
+                    <th>VISTA PREVIA</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let topTrack of topTracks">
+                    <td>
+                        <img [src]="topTrack.album.images | noImage" class="rounded-3 mx-auto img-thumb"
+                            alt="album-image">
+                    </td>
+                    <td>{{topTrack.name}}</td>
+                    <td>{{topTrack.album.name}}</td>
+                    <td>
+                        <!-- <audio [src]="topTrack.preview_url" controls></audio> -->
+                        <iframe [src]="topTrack.id | domseguro:'https://open.spotify.com/embed/track/'" width="300"
+                            height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
