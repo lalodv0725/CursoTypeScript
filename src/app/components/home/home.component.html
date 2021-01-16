@@ -7,6 +7,13 @@
     <h1>Nuevos Lanzamientos</h1>
 </div>
 
+<div *ngIf="error" class="row">
+    <div class="col alert alert-danger animated fadeIn">
+        <h3>Error</h3>
+        <p>{{errorMensaje}}</p>
+    </div>
+</div>
+
 <app-loading *ngIf="this.loading"></app-loading>
 
 <app-tarjetas [items]="nuevosLanzamientos"></app-tarjetas>

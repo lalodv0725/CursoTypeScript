@@ -9,7 +9,7 @@ export class SpotifyService {
     console.log("Spotify Service Listo!!");
   }
 
-  tokenSpotify: string = "BQDWwBsdi5K6kfn4oNtn3TASy3O9h6G20E7C1qLL2SriSQUxRR0xFl2xBez9ILPrAODXWgK-G2bnb2mnWFU";
+  tokenSpotify: string = "QD9sd8VLgAhZPcFfaMN_HznstnixTv4ABmPWGdWDIMW6a01Mg61zVlwJ5kkwtP0uILzIxqZklxvIQXY6l8";
 
   getQuery(query: string) {
     const url = `https://api.spotify.com/v1/${query}`;

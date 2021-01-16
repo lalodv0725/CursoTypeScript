@@ -25,9 +25,13 @@ export class HomeComponent {
 
   loading: boolean;
 
+  error:boolean= false;
+  errorMensaje:string;
+
   constructor(private spotify: SpotifyService) {
 
     this.loading = true;
+    this.error = false;
 
     this.spotify.getNuevosLanzamientos()
       .subscribe((albums: any) => {
@@ -39,6 +43,12 @@ export class HomeComponent {
         this.nuevosLanzamientos = albums;
         this.loading = false;
 
+      }, (errorServicio:any) => {
+        console.log("Error: ",errorServicio);
+        console.log("Mensaje Error: ",errorServicio.error.error.message);
+        this.errorMensaje =errorServicio.error.error.message
+        this.error = true;
+        this.loading = false;
       });
   }
 
