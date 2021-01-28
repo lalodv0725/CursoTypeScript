@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 //Componente
 import { ListasComponent } from "./listas/listas.component";
 import { IonicModule } from '@ionic/angular';
+import { PipesModule } from '../pipes/pipes.module';
 
 
 
@@ -16,7 +17,8 @@ import { IonicModule } from '@ionic/angular';
   ],
   imports: [
     CommonModule,
-    IonicModule
+    IonicModule,
+    PipesModule
   ]
 })
 export class ComponentsModule { }
